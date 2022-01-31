@@ -1,3 +1,5 @@
+database: PostgreSql
+
 Important:
   Needed a scope which neatly says the instance on search is from the user's current branch e.g. product.from_branch.where(id: 111)
 
