@@ -3,7 +3,7 @@ database: PostgreSql
 Important:
   Needed a scope which neatly says the instance on search is from the user's current branch e.g. product.from_branch.where(id: 111)
 
-User username:string
+User username:string, branch:string
 
 InventoryItem branch:string  name:string type:string(ingredients, packagings) unit:string margin:float stock:float
   has_many: orders, dependent: destroy
@@ -27,8 +27,8 @@ APP TASKS:
 *User Branch Switching
   *A scope will filter user roles(principal, admin, maintenance)
     *user in default has no role and can only access index page
-    *principal role have access to every branch
-    *admin role have access to one designated branch
+    *principal role have access to every branch(no access by default and to be designated using app utilities)
+    *admin role have access to one designated branch(to be designated by principal users)
     *maintenance have access to every branch and app utilities
 *Ticket Production
   1.User clicks on the sale link named as a sale number e.g. "sale #1)
