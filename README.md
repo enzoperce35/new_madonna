@@ -1,4 +1,5 @@
 database: PostgreSql
+app link: https://madonna-pos.herokuapp.com/
 
 Important:
   Needed a scope which neatly says the instance on search is from the user's current branch e.g. product.from_branch.where(id: 111)
@@ -18,7 +19,7 @@ Order(Joiner Model) branch:string
   belongs_to: inventory_item, optional: true
   belongs_to: product, optional: true
 
-Sale(creates tickets that is available for 40 days) sale_number:integer
+Sale(creates tickets that is available for 40 days) sale_number:integer editor:string
   has_many: products
 
 Record branch:string date:timestamp total:float

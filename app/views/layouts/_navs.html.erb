@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <div>
+      <%= link_to  'Ma\'Donna Delicacies', root_path, {:class=>"navbar-brand"} %>
+    </div>
+     
+    <div id= "main-menu">
+      <% if user_signed_in? %>
+        <%= link_to 'sign out', destroy_user_session_path, method: 'delete' %>
+      <% else %>
+        <%= link_to 'sign in', new_user_session_path %>
+      <% end %>
+    </div>  
+  </div>
+</nav>
