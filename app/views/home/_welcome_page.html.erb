@@ -1,0 +1,7 @@
+<h3>WELCOME</h3>
+
+<%= form_for :user, url: branch_update_path(current_user), method: 'patch' do |f| %>
+  <%= f.label 'Please select your administrative branch' %><br>
+  <%= f.select :branch, ['Sampaguita', 'Muntingpulo'] %><br><br>
+  <%= f.submit 'Save' %>
+<% end %>

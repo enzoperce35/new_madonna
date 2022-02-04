@@ -1,0 +1,3 @@
+<% if user_signed_in? %>
+  <%= render 'home/welcome_page' if user_is_non_admin %>
+<% end %>
