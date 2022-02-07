@@ -6,23 +6,25 @@ Important:
 
 User username:string, branch:string
 
-InventoryItem branch:string  name:string type:string(ingredients, packagings) unit:string margin:float stock:float
-  has_many: orders, dependent: destroy
-  has_many: products, through: orders 
+Inventory branch:string  name:string type:string(ingredients, packagings) unit:string margin:float stock:float
+  has_many: sales, dependent: destroy
+  has_many: products, through: sales
+  belongs_to: ticket
 
 Product branch:string name:string category:string price:float default:0 soft_deleted:boolean
-  has_many: orders, dependent: destroy
-  has_many: inventory_items,through: orders
-  belongs_to: sale
+  has_many: sales, dependent: destroy
+  has_many: inventories,through: sales
+  belongs_to: ticket
 
-Order(Joiner Model) branch:string
+Sale(Joiner Model) branch:string subtractive:float
   belongs_to: inventory_item, optional: true
   belongs_to: product, optional: true
 
-Sale(creates tickets that is available for 40 days) sale_number:integer editor:string
+Ticket(creates tickets that is available for 40 days) ticket_number:integer author:string
   has_many: products
+  has_many: inventories
 
-Record branch:string date:timestamp total:float
+Record branch:string total:float items:text, array: true note:text
 
 APP TASKS:
 *User Branch Switching

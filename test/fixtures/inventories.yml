@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  branch: MyString
+  name: 
+  unit: MyString
+  margin: 1.5
+  stock: 1.5
+
+two:
+  branch: MyString
+  name: 
+  unit: MyString
+  margin: 1.5
+  stock: 1.5

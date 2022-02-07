@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  branch: MyString
+  name: MyString
+  category: MyString
+  price: 1.5
+  soft_deleted: false
+
+two:
+  branch: MyString
+  name: MyString
+  category: MyString
+  price: 1.5
+  soft_deleted: false
