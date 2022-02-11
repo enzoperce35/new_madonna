@@ -3,13 +3,17 @@
     <div> 
       <%= link_to  'Ma\'Donna Delicacies' + branch_name, root_path, {:class=>"navbar-brand"} %>
     </div>
-     
-    <div id= "main-menu">
-      <% if user_signed_in? %>
-        <%= link_to 'sign out', destroy_user_session_path, method: 'delete' %>
-      <% else %>
-        <%= link_to 'sign in', new_user_session_path %>
-      <% end %>
-    </div>  
+
+    <div>
+      <div id= "main-menu">
+        <% if user_signed_in? %>
+          <%= render 'layouts/burger_nav' %>
+        <% else %>
+          <%= link_to 'Sign_in', new_user_session_path %>
+        <% end %>
+      </div>  
+    </div>
   </div>
 </nav>
+
+<%= javascript_include_tag 'hamburger', 'data-turbolinks-track' => false %>
